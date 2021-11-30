@@ -33,6 +33,7 @@ requirements:
     - scipy
     - ninja
     - h5py
+    - setuptools
 
 test:
   imports:
