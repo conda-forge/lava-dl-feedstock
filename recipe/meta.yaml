@@ -34,13 +34,13 @@ requirements:
 
 test:
   requires:
-    - unittest2
     - pytest
   source_files:
     - tests
   imports:
     - lava.lib.dl.slayer
     - lava.lib.dl.bootstrap
+    - lava.lib.dl.netx
   commands:
     - pytest
 
