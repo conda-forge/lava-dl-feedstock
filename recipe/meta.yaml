@@ -1,5 +1,5 @@
 {% set name = "lava-dl" %}
-{% set version = "0.1.1" %}
+{% set version = "0.2.0" %}
 
 
 package:
@@ -8,12 +8,10 @@ package:
 
 source:
   url: https://github.com/lava-nc/lava-dl/archive/refs/tags/v{{ version }}.tar.gz
-  sha256: c4e00edc186ff0e9f53195f38a108d2273a1fd8bcf5b65ff0bb2f5ffddf9e6eb
-  patches:
-    - fix-setup-py.patch
+  sha256: e7306803fac771a8175ecad1160334c50a5d129d89063f818fb797b9c5cdcbdc
 
 build:
-  number: 1
+  number: 0
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv
 
@@ -21,8 +19,7 @@ requirements:
   host:
     - pip
     - python >=3.6
-    # only required to get the version from build.py
-    - pybuilder
+    - poetry-core
   run:
     - python >=3.6
     - matplotlib-base
@@ -36,13 +33,16 @@ requirements:
     - setuptools
 
 test:
+  requires:
+    - pytest
   source_files:
     - tests
   imports:
     - lava.lib.dl.slayer
     - lava.lib.dl.bootstrap
+    - lava.lib.dl.netx
   commands:
-    - python -m unittest
+    - pytest
 
 about:
   home: https://github.com/lava-nc/lava-dl
