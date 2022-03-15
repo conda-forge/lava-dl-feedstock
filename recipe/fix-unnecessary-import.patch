@@ -1,0 +1,13 @@
+diff --git a/tutorials/lava/lib/dl/slayer/pilotnet/utils.py b/tutorials/lava/lib/dl/slayer/pilotnet/utils.py
+index 973b5ea..bba013d 100644
+--- a/tutorials/lava/lib/dl/slayer/pilotnet/utils.py
++++ b/tutorials/lava/lib/dl/slayer/pilotnet/utils.py
+@@ -17,8 +17,6 @@
+ import h5py
+ 
+ import torch
+-from torch.utils.data import DataLoader
+-from torchvision import transforms
+ import torch.nn.functional as F
+ 
+ class Assistant:
