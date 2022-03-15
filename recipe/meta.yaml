@@ -15,6 +15,7 @@ source:
 build:
   number: 1
   script: {{ PYTHON }} -m pip install . -vv
+  skip: true  # [py==37]
 
 requirements:
   host:
@@ -26,7 +27,8 @@ requirements:
     - matplotlib-base
     - numpy
     - lava
-    - pytorch
+    - pytorch  # [not win]
+    - pytorch-cpu  # [win]
     - torchvision  # [not win]
     - scipy
     - ninja
