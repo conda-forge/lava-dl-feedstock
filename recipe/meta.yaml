@@ -37,6 +37,7 @@ requirements:
 test:
   requires:
     - pytest
+    - asteval
   source_files:
     - tests
   imports:
