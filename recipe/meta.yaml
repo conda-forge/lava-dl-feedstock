@@ -9,8 +9,6 @@ package:
 source:
   url: https://github.com/lava-nc/lava-dl/archive/refs/tags/v{{ version }}.tar.gz
   sha256: 3284272a55b415ab7198c008084c51f7058328f81084ad3fce143f1fa6257cb0
-  patches:
-    - 112.patch
 
 build:
   number: 0
