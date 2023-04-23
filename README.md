@@ -1,11 +1,11 @@
-About lava-dl
-=============
+About lava-dl-feedstock
+=======================
+
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/lava-dl-feedstock/blob/main/LICENSE.txt)
 
 Home: https://github.com/lava-nc/lava-dl
 
 Package license: BSD-3-Clause
-
-Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/lava-dl-feedstock/blob/main/LICENSE.txt)
 
 Summary: lava-dl is a library of deep learning tools within Lava that support offline training, online training and inference methods for various Deep Event-Based Networks.
 
