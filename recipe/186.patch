@@ -1,0 +1,15 @@
+diff --git a/tests/lava/lib/dl/netx/test_hdf5.py b/tests/lava/lib/dl/netx/test_hdf5.py
+index 58064d5..46c6148 100644
+--- a/tests/lava/lib/dl/netx/test_hdf5.py
++++ b/tests/lava/lib/dl/netx/test_hdf5.py
+@@ -179,8 +179,8 @@ def test_axonal_delay_ntidigits(self) -> None:
+         consists of axonal delay. So this tests specifically tests for
+         correctness of axonal delay."""
+         net_config = root + '/gts/ntidigits/ntidigits.net'
+-        input = np.load(root + '/gts/ntidigits/input.npy')
+-        gt = np.load(root + '/gts/ntidigits/output.npy')
++        input = np.load(root + '/gts/ntidigits/input.npy', allow_pickle=True)
++        gt = np.load(root + '/gts/ntidigits/output.npy', allow_pickle=True)
+         num_steps = input.shape[1]
+ 
+         # skipping the last average layer which is not suppprted
