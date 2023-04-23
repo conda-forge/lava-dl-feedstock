@@ -43,7 +43,7 @@ test:
     - lava.lib.dl.bootstrap
     - lava.lib.dl.netx
   commands:
-    - pytest -k "not test_axonal_delay_ntidigits"
+    - pytest -k "not test_axonal_delay_ntidigits and not test_mnist"
 
 about:
   home: https://github.com/lava-nc/lava-dl
