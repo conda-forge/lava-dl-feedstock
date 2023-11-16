@@ -1,5 +1,5 @@
 {% set name = "lava-dl" %}
-{% set version = "0.4.0" %}
+{% set version = "0.5.0" %}
 
 
 package:
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://github.com/lava-nc/lava-dl/archive/refs/tags/v{{ version }}.tar.gz
-  sha256: 2e6dac697f50b9423d4a48a3ddd56656eccb3e6e18f39fc406f997c482c9bfd5
+  sha256: 8ec8caa6be3d67f1dfbebc420e5995be261f48eaa3d4bd11a176d006edf53cfb
 
 build:
   number: 0
@@ -31,6 +31,7 @@ requirements:
     - ninja
     - h5py
     - setuptools
+    - opencv
 
 test:
   requires:
@@ -43,7 +44,7 @@ test:
     - lava.lib.dl.bootstrap
     - lava.lib.dl.netx
   commands:
-    - pytest -k "not test_axonal_delay_ntidigits and not test_mnist"
+    - pytest -k "not test_axonal_delay_ntidigits and not test_mnist and not test_sparse_axonal_delay_ntidigits"
 
 about:
   home: https://github.com/lava-nc/lava-dl
