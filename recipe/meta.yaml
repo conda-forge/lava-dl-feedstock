@@ -1,6 +1,6 @@
 {% set name = "lava-dl" %}
 {% set version = "0.6.0" %}
-
+{% set python_min = "3.10" %}
 
 package:
   name: {{ name|lower }}
@@ -11,17 +11,17 @@ source:
   sha256: 67ff11d5362db7579c375b0e119f954718421b0bdbeede73cc5f77c9391f88e3
 
 build:
-  number: 0
+  number: 1
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
   host:
     - pip
-    - python >=3.8,<3.11
+    - python {{ python_min }}
     - poetry-core
   run:
-    - python >=3.8,<3.11
+    - python >={{ python_min }},<3.11
     - matplotlib-base
     - numpy
     - lava
@@ -37,6 +37,7 @@ test:
   requires:
     - pytest
     - asteval
+    - python {{ python_min }}
   source_files:
     - tests
   imports:
